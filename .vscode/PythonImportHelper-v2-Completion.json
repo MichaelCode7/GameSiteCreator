@@ -1,0 +1,298 @@
+[
+    {
+        "label": "sqlalchemy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "orm",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "orm",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sqlalchemy.orm",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "generate_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "FlaskForm",
+        "importPath": "flask_wtf",
+        "description": "flask_wtf",
+        "isExtraImport": true,
+        "detail": "flask_wtf",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "TextAreaField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "SubmitField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "EmailField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "DataRequired",
+        "importPath": "wtforms.validators",
+        "description": "wtforms.validators",
+        "isExtraImport": true,
+        "detail": "wtforms.validators",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterForm",
+        "importPath": "forms.user",
+        "description": "forms.user",
+        "isExtraImport": true,
+        "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "db_session",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "data.users",
+        "description": "data.users",
+        "isExtraImport": true,
+        "detail": "data.users",
+        "documentation": {}
+    },
+    {
+        "label": "News",
+        "importPath": "data.news",
+        "description": "data.news",
+        "isExtraImport": true,
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
+        "label": "global_init",
+        "kind": 2,
+        "importPath": "data.db_session",
+        "description": "data.db_session",
+        "peekOfCode": "def global_init(db_file):\n    global __factory\n    if __factory:\n        return\n    if not db_file or not db_file.strip():\n        raise Exception(\"Необходимо указать файл базы данных.\")\n    conn_str = f'sqlite:///{db_file.strip()}?check_same_thread=False'\n    print(f\"Подключение к базе данных по адресу {conn_str}\")\n    engine = sa.create_engine(conn_str, echo=False)\n    __factory = orm.sessionmaker(bind=engine)",
+        "detail": "data.db_session",
+        "documentation": {}
+    },
+    {
+        "label": "create_session",
+        "kind": 2,
+        "importPath": "data.db_session",
+        "description": "data.db_session",
+        "peekOfCode": "def create_session() -> Session:\n    global __factory\n    return __factory()",
+        "detail": "data.db_session",
+        "documentation": {}
+    },
+    {
+        "label": "SqlAlchemyBase",
+        "kind": 5,
+        "importPath": "data.db_session",
+        "description": "data.db_session",
+        "peekOfCode": "SqlAlchemyBase = orm.declarative_base()\n__factory = None\ndef global_init(db_file):\n    global __factory\n    if __factory:\n        return\n    if not db_file or not db_file.strip():\n        raise Exception(\"Необходимо указать файл базы данных.\")\n    conn_str = f'sqlite:///{db_file.strip()}?check_same_thread=False'\n    print(f\"Подключение к базе данных по адресу {conn_str}\")",
+        "detail": "data.db_session",
+        "documentation": {}
+    },
+    {
+        "label": "__factory",
+        "kind": 5,
+        "importPath": "data.db_session",
+        "description": "data.db_session",
+        "peekOfCode": "__factory = None\ndef global_init(db_file):\n    global __factory\n    if __factory:\n        return\n    if not db_file or not db_file.strip():\n        raise Exception(\"Необходимо указать файл базы данных.\")\n    conn_str = f'sqlite:///{db_file.strip()}?check_same_thread=False'\n    print(f\"Подключение к базе данных по адресу {conn_str}\")\n    engine = sa.create_engine(conn_str, echo=False)",
+        "detail": "data.db_session",
+        "documentation": {}
+    },
+    {
+        "label": "News",
+        "kind": 6,
+        "importPath": "data.news",
+        "description": "data.news",
+        "peekOfCode": "class News(SqlAlchemyBase):\n    __tablename__ = 'news'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    title = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    content = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    is_private = sqlalchemy.Column(sqlalchemy.Boolean, default=True)\n    user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey(\"users.id\"))\n    user = orm.relationship('User')",
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "data.users",
+        "description": "data.users",
+        "peekOfCode": "class User(SqlAlchemyBase):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')\n    def set_password(self, password):",
+        "detail": "data.users",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterForm",
+        "kind": 6,
+        "importPath": "forms.user",
+        "description": "forms.user",
+        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Войти')",
+        "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():\n        if form.password.data != form.password_again.data:\n            return render_template('register.html', title='Регистрация',",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "reqister",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():\n        if form.password.data != form.password_again.data:\n            return render_template('register.html', title='Регистрация',\n                                   form=form,\n                                   message=\"Пароли не совпадают\")\n        db_sess = db_session.create_session()\n        if db_sess.query(User).filter(User.email == form.email.data).first():\n            return render_template('register.html', title='Регистрация',",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def login():\n    return render_template('base.html', title='Вход')\nif __name__ == '__main__':\n    main()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = '1234'\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['SECRET_KEY']",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app.config['SECRET_KEY'] = '1234'\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])",
+        "detail": "main",
+        "documentation": {}
+    }
+]
