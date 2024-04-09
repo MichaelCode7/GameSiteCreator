@@ -51,6 +51,54 @@
         "documentation": {}
     },
     {
+        "label": "UserMixin",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "LoginManager",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "logout_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "current_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
         "label": "generate_password_hash",
         "importPath": "werkzeug.security",
         "description": "werkzeug.security",
@@ -72,6 +120,46 @@
         "description": "flask_wtf",
         "isExtraImport": true,
         "detail": "flask_wtf",
+        "documentation": {}
+    },
+    {
+        "label": "FlaskForm",
+        "importPath": "flask_wtf",
+        "description": "flask_wtf",
+        "isExtraImport": true,
+        "detail": "flask_wtf",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "TextAreaField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "BooleanField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "SubmitField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
         "documentation": {}
     },
     {
@@ -115,6 +203,22 @@
         "documentation": {}
     },
     {
+        "label": "BooleanField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "DataRequired",
+        "importPath": "wtforms.validators",
+        "description": "wtforms.validators",
+        "isExtraImport": true,
+        "detail": "wtforms.validators",
+        "documentation": {}
+    },
+    {
         "label": "DataRequired",
         "importPath": "wtforms.validators",
         "description": "wtforms.validators",
@@ -147,11 +251,43 @@
         "documentation": {}
     },
     {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "RegisterForm",
         "importPath": "forms.user",
         "description": "forms.user",
         "isExtraImport": true,
         "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "importPath": "forms.user",
+        "description": "forms.user",
+        "isExtraImport": true,
+        "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "NewsForm",
+        "importPath": "forms.news",
+        "description": "forms.news",
+        "isExtraImport": true,
+        "detail": "forms.news",
         "documentation": {}
     },
     {
@@ -228,8 +364,17 @@
         "kind": 6,
         "importPath": "data.users",
         "description": "data.users",
-        "peekOfCode": "class User(SqlAlchemyBase):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')\n    def set_password(self, password):",
+        "peekOfCode": "class User(SqlAlchemyBase, UserMixin):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')\n    def set_password(self, password):",
         "detail": "data.users",
+        "documentation": {}
+    },
+    {
+        "label": "NewsForm",
+        "kind": 6,
+        "importPath": "forms.news",
+        "description": "forms.news",
+        "peekOfCode": "class NewsForm(FlaskForm):\n    title = StringField('Заголовок', validators=[DataRequired()])\n    content = TextAreaField(\"Содержание\")\n    is_private = BooleanField(\"Личное\")\n    submit = SubmitField('Применить')",
+        "detail": "forms.news",
         "documentation": {}
     },
     {
@@ -237,8 +382,26 @@
         "kind": 6,
         "importPath": "forms.user",
         "description": "forms.user",
-        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Войти')",
+        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Войти')\nclass LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])",
         "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "kind": 6,
+        "importPath": "forms.user",
+        "description": "forms.user",
+        "peekOfCode": "class LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    remember_me = BooleanField('Запомнить меня')\n    submit = SubmitField('Войти')",
+        "detail": "forms.user",
+        "documentation": {}
+    },
+    {
+        "label": "load_user",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()\n    # for news in user.news:\n    #     print(news.title)\n    app.run()",
+        "detail": "main",
         "documentation": {}
     },
     {
@@ -246,7 +409,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
+        "peekOfCode": "def main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()\n    # for news in user.news:\n    #     print(news.title)\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()",
         "detail": "main",
         "documentation": {}
     },
@@ -255,7 +418,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():\n        if form.password.data != form.password_again.data:\n            return render_template('register.html', title='Регистрация',",
+        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    if current_user.is_authenticated:\n        news = db_sess.query(News).filter(\n            (News.user == current_user) | (News.is_private != True))\n    else:\n        news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
         "detail": "main",
         "documentation": {}
     },
@@ -273,7 +436,43 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def login():\n    return render_template('base.html', title='Вход')\nif __name__ == '__main__':\n    main()",
+        "peekOfCode": "def login():\n    form = LoginForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        user = db_sess.query(User).filter(User.email == form.email.data).first()\n        if user and user.check_password(form.password.data):\n            login_user(user, remember=form.remember_me.data)\n            return redirect(\"/\")\n        return render_template('login.html',\n                               message=\"Неправильный логин или пароль\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(\"/\")\n@app.route('/news',  methods=['GET', 'POST'])\n@login_required\ndef add_news():\n    form = NewsForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        news = News()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add_news",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def add_news():\n    form = NewsForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        news = News()\n        news.title = form.title.data\n        news.content = form.content.data\n        news.is_private = form.is_private.data\n        current_user.news.append(news)\n        db_sess.merge(current_user)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "edit_news",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def edit_news(id):\n    form = NewsForm()\n    if request.method == \"GET\":\n        db_sess = db_session.create_session()\n        news = db_sess.query(News).filter(News.id == id,\n                                          News.user == current_user\n                                          ).first()\n        if news:\n            form.title.data = news.title\n            form.content.data = news.content",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "news_delete",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def news_delete(id):\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.id == id,\n                                      News.user == current_user\n                                      ).first()\n    if news:\n        db_sess.delete(news)\n        db_sess.commit()\n    else:\n        abort(404)",
         "detail": "main",
         "documentation": {}
     },
@@ -282,7 +481,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = '1234'\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')",
+        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = '1234'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")",
         "detail": "main",
         "documentation": {}
     },
@@ -291,7 +490,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app.config['SECRET_KEY'] = '1234'\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])",
+        "peekOfCode": "app.config['SECRET_KEY'] = '1234'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "login_manager",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "login_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()",
         "detail": "main",
         "documentation": {}
     }
