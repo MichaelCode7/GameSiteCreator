@@ -227,6 +227,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -315,6 +324,22 @@
         "documentation": {}
     },
     {
+        "label": "GeneralFuncs",
+        "importPath": "general_funcs",
+        "description": "general_funcs",
+        "isExtraImport": true,
+        "detail": "general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "general_vars",
+        "description": "general_vars",
+        "isExtraImport": true,
+        "detail": "general_vars",
+        "documentation": {}
+    },
+    {
         "label": "global_init",
         "kind": 2,
         "importPath": "data.db_session",
@@ -396,11 +421,29 @@
         "documentation": {}
     },
     {
+        "label": "GeneralFuncs",
+        "kind": 6,
+        "importPath": "general_funcs",
+        "description": "general_funcs",
+        "peekOfCode": "class GeneralFuncs: \n    def get_form_json(path, key=None):\n        with open(path, 'r') as jsonf:\n            jsond = json.loads(jsonf.read())\n            if key != \"\" or key != None:\n                return jsond[key]\n            return jsond",
+        "detail": "general_funcs",
+        "documentation": {}
+    },
+    {
+        "label": "json_info_f",
+        "kind": 5,
+        "importPath": "general_vars",
+        "description": "general_vars",
+        "peekOfCode": "json_info_f = 'db/text_data/info.json'",
+        "detail": "general_vars",
+        "documentation": {}
+    },
+    {
         "label": "load_user",
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()\n    # for news in user.news:\n    #     print(news.title)\n    app.run()",
+        "peekOfCode": "def load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")\ndef about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)",
         "detail": "main",
         "documentation": {}
     },
@@ -409,7 +452,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()\n    # for news in user.news:\n    #     print(news.title)\n    app.run()\n@app.route(\"/\")\ndef index():\n    db_sess = db_session.create_session()",
+        "peekOfCode": "def main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")\ndef about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\n@login_required\ndef index():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\n@login_required\ndef index():\n    db_sess = db_session.create_session()\n    return render_template(\"index.html\")\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
         "detail": "main",
         "documentation": {}
     },
@@ -418,7 +470,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    if current_user.is_authenticated:\n        news = db_sess.query(News).filter(\n            (News.user == current_user) | (News.is_private != True))\n    else:\n        news = db_sess.query(News).filter(News.is_private != True)\n    return render_template(\"index.html\", news=news, title='Blog')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
+        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    return render_template(\"index.html\")\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():\n        if form.password.data != form.password_again.data:\n            return render_template('register.html', title='Регистрация',\n                                   form=form,",
         "detail": "main",
         "documentation": {}
     },
@@ -459,29 +511,11 @@
         "documentation": {}
     },
     {
-        "label": "edit_news",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def edit_news(id):\n    form = NewsForm()\n    if request.method == \"GET\":\n        db_sess = db_session.create_session()\n        news = db_sess.query(News).filter(News.id == id,\n                                          News.user == current_user\n                                          ).first()\n        if news:\n            form.title.data = news.title\n            form.content.data = news.content",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "news_delete",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def news_delete(id):\n    db_sess = db_session.create_session()\n    news = db_sess.query(News).filter(News.id == id,\n                                      News.user == current_user\n                                      ).first()\n    if news:\n        db_sess.delete(news)\n        db_sess.commit()\n    else:\n        abort(404)",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
         "label": "app",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = '1234'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")",
+        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = 'super_secret_key'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/gshopdata.db\")",
         "detail": "main",
         "documentation": {}
     },
@@ -490,7 +524,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app.config['SECRET_KEY'] = '1234'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()",
+        "peekOfCode": "app.config['SECRET_KEY'] = 'super_secret_key'\nlogin_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()",
         "detail": "main",
         "documentation": {}
     },
@@ -499,7 +533,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "login_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/blogs.db\")\n    # db_sess = db_session.create_session()\n    # user = db_sess.query(User).filter(User.id == 1).first()",
+        "peekOfCode": "login_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")",
         "detail": "main",
         "documentation": {}
     }

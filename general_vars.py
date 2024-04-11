@@ -1,0 +1,1 @@
+json_info_f = 'db/text_data/info.json'
