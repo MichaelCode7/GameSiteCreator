@@ -1,0 +1,16 @@
+{% extends "base.html", "base_extended_register.html" %}
+
+{% block content %}
+
+<h1>Open Game Site Creator</h1>
+<h4>ver {{ site_version }}</h4>
+<p>{{ about_site }}</p>
+<br>
+<h3>Команда:</h3>
+<ul class="about_info_devs">
+    {% for dev in devs%}
+        <li><span class="bold">{{ dev[0] }}</span>, {{ dev[1] }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
