@@ -32,10 +32,12 @@ def about():
     return render_template('about.html', **params)
 
 @app.route("/")
-@login_required
 def index():
-    db_sess = db_session.create_session()
-    return render_template("index.html")
+    if current_user.is_authenticated:
+        db_sess = db_session.create_session()
+        return render_template("index.html")
+    else:
+        return redirect('/about')
 
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
