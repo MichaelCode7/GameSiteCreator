@@ -1,0 +1,106 @@
+/* general styles */
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+
+
+body {
+    background-image: url(../img/black-background.jpg);
+}
+
+/* for decoration styles */
+
+.bold {
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+
+/* elements styles */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    color: #f0e9e9;
+    margin-top: 6%;
+    max-width: 70%;
+    max-height: 80%;
+    
+}
+
+.main__content {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #242323bf;
+}
+
+.header {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #242323bf;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about_info_devs {
+    margin-left: 40px;
+}
+
+.footer__container {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #242323bf;
+    display: flex;
+    color: #a3a3a3;
+    justify-content: space-between;
+}
+
+.center__container a {
+    color: #a3a3a3;
+    font-size: 13px;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.right__container {
+    font-size: 10px;
+    align-content: end;
+}
+
+.sing_in_btns {
+    margin: 0;
+}
+
+.btn {
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    color: #706f6f;
+    transition: .3s;
+}
+
+.btn-register {
+    background-color: #ff0000;
+    color: #e8e8e8;
+}
+
+.btn-register:hover {
+    background-color: #ff3030;
+}
+
+.btn-login {
+    background-color: #5dcf00;
+    color: #e8e8e8;
+}
+
+.btn-login:hover {
+    background-color: #91ff38
+}
