@@ -44,6 +44,8 @@ body {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #242323bf;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .about_info_devs {
@@ -72,4 +74,34 @@ body {
 .right__container {
     font-size: 10px;
     align-content: end;
+}
+
+.sing_in_btns {
+    margin: 0;
+}
+
+.btn {
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    color: #706f6f;
+    transition: .3s;
+}
+
+.btn-register {
+    background-color: #ff0000;
+    color: #e8e8e8;
+    margin-right: 10px;
+}
+
+.btn-register:hover {
+    background-color: #ff3030;
+}
+
+.btn-login {
+    background-color: #5dcf00;
+    color: #e8e8e8;
+}
+
+.btn-login:hover {
+    background-color: #91ff38
 }

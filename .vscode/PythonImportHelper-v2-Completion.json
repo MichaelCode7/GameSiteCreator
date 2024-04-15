@@ -42,79 +42,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "UserMixin",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "LoginManager",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "login_user",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "logout_user",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "current_user",
-        "importPath": "flask_login",
-        "description": "flask_login",
-        "isExtraImport": true,
-        "detail": "flask_login",
-        "documentation": {}
-    },
-    {
-        "label": "generate_password_hash",
-        "importPath": "werkzeug.security",
-        "description": "werkzeug.security",
-        "isExtraImport": true,
-        "detail": "werkzeug.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_password_hash",
-        "importPath": "werkzeug.security",
-        "description": "werkzeug.security",
-        "isExtraImport": true,
-        "detail": "werkzeug.security",
-        "documentation": {}
-    },
-    {
         "label": "FlaskForm",
         "importPath": "flask_wtf",
         "description": "flask_wtf",
@@ -227,6 +154,79 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "UserMixin",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "LoginManager",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "logout_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "current_user",
+        "importPath": "flask_login",
+        "description": "flask_login",
+        "isExtraImport": true,
+        "detail": "flask_login",
+        "documentation": {}
+    },
+    {
+        "label": "generate_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -293,10 +293,18 @@
     },
     {
         "label": "NewsForm",
-        "importPath": "forms.news",
-        "description": "forms.news",
+        "importPath": "data.news",
+        "description": "data.news",
         "isExtraImport": true,
-        "detail": "forms.news",
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
+        "label": "News",
+        "importPath": "data.news",
+        "description": "data.news",
+        "isExtraImport": true,
+        "detail": "data.news",
         "documentation": {}
     },
     {
@@ -313,14 +321,6 @@
         "description": "data.users",
         "isExtraImport": true,
         "detail": "data.users",
-        "documentation": {}
-    },
-    {
-        "label": "News",
-        "importPath": "data.news",
-        "description": "data.news",
-        "isExtraImport": true,
-        "detail": "data.news",
         "documentation": {}
     },
     {
@@ -376,11 +376,20 @@
         "documentation": {}
     },
     {
+        "label": "NewsForm",
+        "kind": 6,
+        "importPath": "data.news",
+        "description": "data.news",
+        "peekOfCode": "class NewsForm(FlaskForm):\n    title = StringField('Заголовок', validators=[DataRequired()])\n    content = TextAreaField(\"Содержание\")\n    is_private = BooleanField(\"Личное\")\n    submit = SubmitField('Применить')\nclass News(SqlAlchemyBase):\n    __tablename__ = 'news'\n    id = sqlalchemy.Column(sqlalchemy.Integer, \n                           primary_key=True, autoincrement=True)\n    title = sqlalchemy.Column(sqlalchemy.String, nullable=True)",
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
         "label": "News",
         "kind": 6,
         "importPath": "data.news",
         "description": "data.news",
-        "peekOfCode": "class News(SqlAlchemyBase):\n    __tablename__ = 'news'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    title = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    content = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    is_private = sqlalchemy.Column(sqlalchemy.Boolean, default=True)\n    user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey(\"users.id\"))\n    user = orm.relationship('User')",
+        "peekOfCode": "class News(SqlAlchemyBase):\n    __tablename__ = 'news'\n    id = sqlalchemy.Column(sqlalchemy.Integer, \n                           primary_key=True, autoincrement=True)\n    title = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    content = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, \n                                     default=datetime.datetime.now)\n    last_update_date = sqlalchemy.Column(sqlalchemy.DateTime, \n                                     default=datetime.datetime.now)",
         "detail": "data.news",
         "documentation": {}
     },
@@ -389,17 +398,8 @@
         "kind": 6,
         "importPath": "data.users",
         "description": "data.users",
-        "peekOfCode": "class User(SqlAlchemyBase, UserMixin):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')\n    def set_password(self, password):",
+        "peekOfCode": "class User(SqlAlchemyBase, UserMixin):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    last_login_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')",
         "detail": "data.users",
-        "documentation": {}
-    },
-    {
-        "label": "NewsForm",
-        "kind": 6,
-        "importPath": "forms.news",
-        "description": "forms.news",
-        "peekOfCode": "class NewsForm(FlaskForm):\n    title = StringField('Заголовок', validators=[DataRequired()])\n    content = TextAreaField(\"Содержание\")\n    is_private = BooleanField(\"Личное\")\n    submit = SubmitField('Применить')",
-        "detail": "forms.news",
         "documentation": {}
     },
     {
@@ -407,7 +407,7 @@
         "kind": 6,
         "importPath": "forms.user",
         "description": "forms.user",
-        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Войти')\nclass LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])",
+        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Регистрация')\nclass LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])",
         "detail": "forms.user",
         "documentation": {}
     },
@@ -452,7 +452,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")\ndef about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\n@login_required\ndef index():",
+        "peekOfCode": "def main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")\ndef about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\ndef index():\n    if current_user.is_authenticated:",
         "detail": "main",
         "documentation": {}
     },
@@ -461,7 +461,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\n@login_required\ndef index():\n    db_sess = db_session.create_session()\n    return render_template(\"index.html\")\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():",
+        "peekOfCode": "def about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\ndef index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\")\n    else:\n        return redirect('/about')",
         "detail": "main",
         "documentation": {}
     },
@@ -470,7 +470,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def index():\n    db_sess = db_session.create_session()\n    return render_template(\"index.html\")\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():\n        if form.password.data != form.password_again.data:\n            return render_template('register.html', title='Регистрация',\n                                   form=form,",
+        "peekOfCode": "def index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\")\n    else:\n        return redirect('/about')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():",
         "detail": "main",
         "documentation": {}
     },
@@ -488,7 +488,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def login():\n    form = LoginForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        user = db_sess.query(User).filter(User.email == form.email.data).first()\n        if user and user.check_password(form.password.data):\n            login_user(user, remember=form.remember_me.data)\n            return redirect(\"/\")\n        return render_template('login.html',\n                               message=\"Неправильный логин или пароль\",",
+        "peekOfCode": "def login():\n    form = LoginForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        user = db_sess.query(User).filter(User.email == form.email.data).first()\n        if user and user.check_password(form.password.data):\n            login_user(user, remember=form.remember_me.data)\n            user.last_login_date = datetime.datetime.now()\n            db_sess.commit()\n            return redirect(\"/\")",
         "detail": "main",
         "documentation": {}
     },

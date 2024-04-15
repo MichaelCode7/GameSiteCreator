@@ -8,27 +8,33 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
 	<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/img/ico.png">
 	<title>{{ title }}</title>
 </head>
 <body>
 <main role="main" class="container">
-    <header class="header">
-        {% if current_user.is_authenticated %}
-            <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+    {% if request.path != '/register' and request.path != '/login' %}
+        <header class="header">
+            {% if current_user.is_authenticated %}
+                <div class="nav__menu">
+                    {% block nav_bar %} {% endblock %}
+                </div>
+                <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
             {% else %}
-                <p>
-                    <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
-                    <a class="btn btn-success" href="/login">Войти</a>
-                </p>
-        {% endif %}
-    </header>
+                <div class="sing_in_btns">
+                    <a class="btn btn-register" href="/register">Регистрация</a>
+                    <a class="btn btn-login" href="/login">Вход</a>
+                </div>
+            {% endif %}
+        </header>
+    {% endif %}
     <div class="main__content">
-    {% block content %}{% endblock %}
+    {% block content %} {% endblock %}
     </div>
     <footer class="footer__container">
         <!--left&right for future-->
-        <div class="center__container"><a href="#">Open Game Site Creator</a></div>
-        <div class="right__container">© Права не защищены, 0000</div>
+        <div class="center__container"><a href="/about">Open Game Site Creator</a></div>
+        <div class="right__container">© Права не защищены, 0_0</div>
     </footer>
 </main>
 
