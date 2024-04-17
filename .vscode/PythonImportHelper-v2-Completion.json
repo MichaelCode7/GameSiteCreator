@@ -17,14 +17,6 @@
         "documentation": {}
     },
     {
-        "label": "orm",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "sqlalchemy.orm",
         "kind": 6,
         "isExtraImport": true,
@@ -39,118 +31,6 @@
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
         "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
-        "label": "FlaskForm",
-        "importPath": "flask_wtf",
-        "description": "flask_wtf",
-        "isExtraImport": true,
-        "detail": "flask_wtf",
-        "documentation": {}
-    },
-    {
-        "label": "FlaskForm",
-        "importPath": "flask_wtf",
-        "description": "flask_wtf",
-        "isExtraImport": true,
-        "detail": "flask_wtf",
-        "documentation": {}
-    },
-    {
-        "label": "StringField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "TextAreaField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "BooleanField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "SubmitField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "StringField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "TextAreaField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "SubmitField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "EmailField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "BooleanField",
-        "importPath": "wtforms",
-        "description": "wtforms",
-        "isExtraImport": true,
-        "detail": "wtforms",
-        "documentation": {}
-    },
-    {
-        "label": "DataRequired",
-        "importPath": "wtforms.validators",
-        "description": "wtforms.validators",
-        "isExtraImport": true,
-        "detail": "wtforms.validators",
-        "documentation": {}
-    },
-    {
-        "label": "DataRequired",
-        "importPath": "wtforms.validators",
-        "description": "wtforms.validators",
-        "isExtraImport": true,
-        "detail": "wtforms.validators",
         "documentation": {}
     },
     {
@@ -227,6 +107,70 @@
         "documentation": {}
     },
     {
+        "label": "FlaskForm",
+        "importPath": "flask_wtf",
+        "description": "flask_wtf",
+        "isExtraImport": true,
+        "detail": "flask_wtf",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "TextAreaField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "SubmitField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "EmailField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "BooleanField",
+        "importPath": "wtforms",
+        "description": "wtforms",
+        "isExtraImport": true,
+        "detail": "wtforms",
+        "documentation": {}
+    },
+    {
+        "label": "DataRequired",
+        "importPath": "wtforms.validators",
+        "description": "wtforms.validators",
+        "isExtraImport": true,
+        "detail": "wtforms.validators",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -292,19 +236,11 @@
         "documentation": {}
     },
     {
-        "label": "NewsForm",
-        "importPath": "data.news",
-        "description": "data.news",
+        "label": "db_session",
+        "importPath": "data",
+        "description": "data",
         "isExtraImport": true,
-        "detail": "data.news",
-        "documentation": {}
-    },
-    {
-        "label": "News",
-        "importPath": "data.news",
-        "description": "data.news",
-        "isExtraImport": true,
-        "detail": "data.news",
+        "detail": "data",
         "documentation": {}
     },
     {
@@ -324,6 +260,30 @@
         "documentation": {}
     },
     {
+        "label": "News",
+        "importPath": "data.news",
+        "description": "data.news",
+        "isExtraImport": true,
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
+        "label": "News",
+        "importPath": "data.news",
+        "description": "data.news",
+        "isExtraImport": true,
+        "detail": "data.news",
+        "documentation": {}
+    },
+    {
+        "label": "GeneralFuncs",
+        "importPath": "general_funcs",
+        "description": "general_funcs",
+        "isExtraImport": true,
+        "detail": "general_funcs",
+        "documentation": {}
+    },
+    {
         "label": "GeneralFuncs",
         "importPath": "general_funcs",
         "description": "general_funcs",
@@ -337,6 +297,23 @@
         "description": "general_vars",
         "isExtraImport": true,
         "detail": "general_vars",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "general_vars",
+        "description": "general_vars",
+        "isExtraImport": true,
+        "detail": "general_vars",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -376,15 +353,6 @@
         "documentation": {}
     },
     {
-        "label": "NewsForm",
-        "kind": 6,
-        "importPath": "data.news",
-        "description": "data.news",
-        "peekOfCode": "class NewsForm(FlaskForm):\n    title = StringField('Заголовок', validators=[DataRequired()])\n    content = TextAreaField(\"Содержание\")\n    is_private = BooleanField(\"Личное\")\n    submit = SubmitField('Применить')\nclass News(SqlAlchemyBase):\n    __tablename__ = 'news'\n    id = sqlalchemy.Column(sqlalchemy.Integer, \n                           primary_key=True, autoincrement=True)\n    title = sqlalchemy.Column(sqlalchemy.String, nullable=True)",
-        "detail": "data.news",
-        "documentation": {}
-    },
-    {
         "label": "News",
         "kind": 6,
         "importPath": "data.news",
@@ -398,7 +366,7 @@
         "kind": 6,
         "importPath": "data.users",
         "description": "data.users",
-        "peekOfCode": "class User(SqlAlchemyBase, UserMixin):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    last_login_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    news = orm.relationship(\"News\", back_populates='user')",
+        "peekOfCode": "class User(SqlAlchemyBase, UserMixin):\n    __tablename__ = 'users'\n    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)\n    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    about = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)\n    hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)\n    created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    last_login_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)\n    def set_password(self, password):",
         "detail": "data.users",
         "documentation": {}
     },
@@ -407,7 +375,7 @@
         "kind": 6,
         "importPath": "forms.user",
         "description": "forms.user",
-        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Регистрация')\nclass LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])",
+        "peekOfCode": "class RegisterForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])\n    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])\n    name = StringField('Имя пользователя', validators=[DataRequired()])\n    about = TextAreaField(\"Немного о себе\")\n    submit = SubmitField('Зарегистрироваться')\nclass LoginForm(FlaskForm):\n    email = EmailField('Почта', validators=[DataRequired()])\n    password = PasswordField('Пароль', validators=[DataRequired()])",
         "detail": "forms.user",
         "documentation": {}
     },
@@ -461,7 +429,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\ndef index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\")\n    else:\n        return redirect('/about')",
+        "peekOfCode": "def about():\n    params = gf.get_form_json(json_info_f, key=\"about_info\")\n    return render_template('about.html', **params)\n@app.route(\"/\")\ndef index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\", title=\"Главная\")\n    else:\n        return redirect('/about')",
         "detail": "main",
         "documentation": {}
     },
@@ -470,7 +438,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\")\n    else:\n        return redirect('/about')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():",
+        "peekOfCode": "def index():\n    if current_user.is_authenticated:\n        db_sess = db_session.create_session()\n        return render_template(\"index.html\", title=\"Главная\")\n    else:\n        return redirect('/about')\n@app.route('/register', methods=['GET', 'POST'])\ndef reqister():\n    form = RegisterForm()\n    if form.validate_on_submit():",
         "detail": "main",
         "documentation": {}
     },
@@ -497,16 +465,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(\"/\")\n@app.route('/news',  methods=['GET', 'POST'])\n@login_required\ndef add_news():\n    form = NewsForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        news = News()",
+        "peekOfCode": "def logout():\n    logout_user()\n    return redirect(\"/\")\n@app.route('/news',  methods=['GET', 'POST'])\n@login_required\ndef news():\n    return render_template('news.html', title='Новости')\nif __name__ == '__main__':\n    main()",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "add_news",
+        "label": "news",
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def add_news():\n    form = NewsForm()\n    if form.validate_on_submit():\n        db_sess = db_session.create_session()\n        news = News()\n        news.title = form.title.data\n        news.content = form.content.data\n        news.is_private = form.is_private.data\n        current_user.news.append(news)\n        db_sess.merge(current_user)",
+        "peekOfCode": "def news():\n    return render_template('news.html', title='Новости')\nif __name__ == '__main__':\n    main()",
         "detail": "main",
         "documentation": {}
     },
@@ -535,6 +503,42 @@
         "description": "main",
         "peekOfCode": "login_manager = LoginManager()\nlogin_manager.init_app(app)\n@login_manager.user_loader\ndef load_user(user_id):\n    db_sess = db_session.create_session()\n    return db_sess.query(User).get(user_id)\ndef main():\n    db_session.global_init(\"db/gshopdata.db\")\n    app.run()\n@app.route(\"/about\")",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add_news",
+        "kind": 2,
+        "importPath": "news_redactor",
+        "description": "news_redactor",
+        "peekOfCode": "def add_news():\n    db_sess = db_session.create_session()\n    print('Синтаксис новости:\\nЗаголовок\\nКонтент')\n    arr = list(map(lambda x: x.strip(), sys.stdin))\n    if len(arr) > 2:\n        print('Синтаксическая ошибка!')\n        return\n    news = News()\n    news.title, news.content = arr\n    db_sess.add(news)",
+        "detail": "news_redactor",
+        "documentation": {}
+    },
+    {
+        "label": "edit_news",
+        "kind": 2,
+        "importPath": "news_redactor",
+        "description": "news_redactor",
+        "peekOfCode": "def edit_news():\n    db_sess = db_session.create_session()\n    news_id = int(input('Введите id изменяемой новости: '))\n    news = db_sess.query(News).filter(News.id == news_id).first()\n    if news:\n        print('Синтаксис новости:\\nЗаголовок\\nКонтент')\n        arr = list(map(lambda x: x.strip(), sys.stdin))\n        if len(arr) > 2:\n            print('Синтаксическая ошибка!')\n            return",
+        "detail": "news_redactor",
+        "documentation": {}
+    },
+    {
+        "label": "news_delete",
+        "kind": 2,
+        "importPath": "news_redactor",
+        "description": "news_redactor",
+        "peekOfCode": "def news_delete():\n    db_sess = db_session.create_session()\n    news_id = int(input('Введите id удаляемой новости: '))\n    news = db_sess.query(News).filter(News.id == news_id).first()\n    if news:\n        db_sess.delete(news)\n        db_sess.commit()\n        return f'Новость с id {news_id} успешно удалена!'\n    else:\n        return 'Такой записи нет в базе!'",
+        "detail": "news_redactor",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "news_redactor",
+        "description": "news_redactor",
+        "peekOfCode": "def main():\n    db_session.global_init(\"db/gshopdata.db\")\n    while True:\n        answ = input('''Выберите один из предложенных вариантов:\\n1 - добавить новость.\n2 - изменить новость.\\n3 - удалить новость.\\n4 - выход.\\n''')\n        match answ:\n            case '1':\n                print(add_news())\n            case '2':\n                print(edit_news())",
+        "detail": "news_redactor",
         "documentation": {}
     }
 ]

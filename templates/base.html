@@ -17,7 +17,18 @@
         <header class="header">
             {% if current_user.is_authenticated %}
                 <div class="nav__menu">
-                    {% block nav_bar %} {% endblock %}
+                    <div class="news__block nav__block">
+                        <a href="/news" class="nav__page-link">НОВОСТИ</a>
+                    </div>
+                    <div class="about__block nav__block">
+                        <a href="/about" class="nav__page-link">О ПЛАТФОРМЕ</a>
+                    </div>
+                    <div class="shops__block nav__block">
+                        <a href="/" class="nav__page-link">МАГАЗИНЫ</a>
+                    </div>
+                    <div class="create__shop-block nav__block">
+                        <a href="/" class="nav__page-link">СОЗДАТЬ МАГАЗИН</a>
+                    </div>
                 </div>
                 <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
             {% else %}

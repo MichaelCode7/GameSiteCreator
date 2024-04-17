@@ -45,7 +45,7 @@ body {
     padding: 20px;
     background-color: #242323bf;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .about_info_devs {
@@ -84,7 +84,6 @@ body {
     background-color: #d1d1d1;
     border-radius: 10px;
     color: #706f6f;
-    transition: .3s;
 }
 
 .btn-register {
@@ -104,4 +103,48 @@ body {
 
 .btn-login:hover {
     background-color: #91ff38
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: #c9c9c9;
+    text-decoration: underline #b30039;
+}
+
+.navbar-brand:hover {
+    color: #feb1b1;
+    text-decoration: underline #e71686;
+}
+
+.nav__menu {
+    width: 100%;
+    min-height: 100%;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__block {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    
+}
+
+.nav__block:hover {
+    background-color: #242323e7;
+    box-shadow: 0px 2px rgb(255, 30, 0);
+}
+
+.nav__page-link {
+    color: #949494;
+}
+
+.nav__page-link:hover {
+    text-decoration: none;
+    color: #d3c5c5;
 }

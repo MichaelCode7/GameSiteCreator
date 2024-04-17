@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, request, abort
 import sqlalchemy
 from forms.user import RegisterForm
 from forms.user import LoginForm
-from data.news import NewsForm
 from data import db_session
 from data.users import User
 import datetime
@@ -16,7 +15,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'super_secret_key'
 login_manager = LoginManager()
 login_manager.init_app(app)
-
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -36,7 +34,7 @@ def about():
 def index():
     if current_user.is_authenticated:
         db_sess = db_session.create_session()
-        return render_template("index.html")
+        return render_template("index.html", title="Главная")
     else:
         return redirect('/about')
 
@@ -92,21 +90,8 @@ def logout():
 
 @app.route('/news',  methods=['GET', 'POST'])
 @login_required
-def add_news():
-    form = NewsForm()
-    if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        news = News()
-        news.title = form.title.data
-        news.content = form.content.data
-        news.is_private = form.is_private.data
-        current_user.news.append(news)
-        db_sess.merge(current_user)
-        db_sess.commit()
-        return redirect('/')
-    return render_template('news.html', title='Добавление новости', 
-                           form=form)
-
+def news():
+    return render_template('news.html', title='Новости')
 
 if __name__ == '__main__':
     main()
